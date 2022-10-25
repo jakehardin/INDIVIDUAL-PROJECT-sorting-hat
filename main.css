@@ -6,3 +6,12 @@ body {
   width: 300px;
   height: 300px;
 }
+
+.sortingHat{
+  display: block;
+  padding-top: 10px;
+}
+
+.sortMe{
+  padding-bottom: 10px;
+}
