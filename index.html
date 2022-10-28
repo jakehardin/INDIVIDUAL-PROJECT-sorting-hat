@@ -9,27 +9,21 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <button class="btn btn-primary" id="all-button">All Students</button>
-  <button class="btn btn-primary" id="grif-button">Griffyndor</button>
-  <button class="btn btn-primary" id="slyth-button">Slytherin</button>
-  <button class="btn btn-primary" id="cat-button">Hufflepuff</button>
-  <button class="btn btn-primary" id="dino-button">Ravenclaw</button>
-  
-  <img class="sortingHat" src="https://pathwaysmiddlecollege.files.wordpress.com/2020/04/harry-potter-hat-sorting-hat-3d-model-low-poly-max-obj-fbx-mat.jpg?w=1200" alt="Sorting Hat" width="300" height="200">
-  <h1>Hello, I am The Sorting Hat. Hmm, difficult. VERY difficult. Plenty of courage, I see. Not a bad mind, either. There's talent, oh yes. And a thirst to prove yourself. But where to put you? Please, tell me your name.</h1>
-  
-  <form class="sortMe">
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="name" placeholder="Name" required>
-      <label fo   r="floatingInput">Name</label>
+<div id="app">
+  <div class="card bg-dark text-white">
+    <img src="https://pathwaysmiddlecollege.files.wordpress.com/2020/04/harry-potter-hat-sorting-hat-3d-model-low-poly-max-obj-fbx-mat.jpg?w=1200" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Hello, I am The Sorting Hat!</h5>
+      <p class="card-text">Hmm, difficult. VERY difficult. Plenty of courage, I see. Not a bad mind, either. There's talent, oh yes. And a thirst to prove yourself. But where to put you? Please, click the button.</p>
+      <button type="button" class="btn btn-primary" id="sort-me">SORT</button>
     </div>
+  </div>
 
-    <button type="submit" class="btn btn-success" id="form-submit">Sort Me!</button>
-  </form>
-  <div id="app"></div>
-  
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <div id="formContainer"></div>
+  <div id="studentContainer"></div>
+  <div id="expelledContainer"></div>
+ </div> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
 </html>
