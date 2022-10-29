@@ -2,13 +2,10 @@ const students = [];
 const houses = ['Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff'];
 const expelledStudents = [];
 
-
 const sortButton = document.querySelector('#sort-me');
 const form = document.querySelector('#formContainer');
-const expelledCards = document.querySelector('#expelledContainer');
 const submitButton = document.querySelector('#submit');
 const app = document.querySelector('#app');
-
 
 const renderToDom = (divId, htmlToRender) => {
 const selectedDiv = document.querySelector(divId);
@@ -40,9 +37,9 @@ const voldysArmy = (array) => {
   let domString = "";
   for (const member of array) {
   domString += `<div class="card" style="width: 18rem;">
-  <img src="https://icon2.cleanpng.com/20180805/cji/kisspng-tattoo-clip-art-tattoo-clip-art-portable-network-g-poison-snake-tattoo-tattoos-skull-skulls-5b66e26356fe81.0544486015334692833563.jpg" class="card-img-top" alt="Death eater symbol">
+  <img src="http://images5.fanpop.com/image/polls/871000/871394_1320484350081_full.jpg" class="card-img-top" alt="Death eater symbol">
   <div class="card-body">
-    <p class="card-text">${member.name} has been recruited to be a Death Eater!</p>
+    <p class="card-text">${member.name} has joined VOLDEMORT'S army!</p>
   </div>
 </div>`;
   }
@@ -83,9 +80,9 @@ const createStudent = (e) => {
       
       const index = students.findIndex(e => e.id === Number(id));
       
-      const darkSiding = students.splice(index, 1);
+      const banish = students.splice(index, 1);
       
-      expelledStudents.push(darkSiding[0]);
+      expelledStudents.push(banish[0]);
       console.log(expelledStudents);
       voldysArmy(expelledStudents)
      
@@ -94,3 +91,49 @@ const createStudent = (e) => {
       renderToDom('#expelledContainer', voldysArmy());
     }
   });
+
+  const filter = (array, studentHouseString) => {
+    const studentHouseArray = [];
+    
+    for (const member of array) {
+    if (member.house === studentHouseString) {
+    studentHouseArray.push(member);
+    }
+    }
+    
+    return studentHouseArray;
+    }
+
+  const grifButton = document.querySelector("#grifButton");
+
+  const slythButton = document.querySelector("#slythButton");
+  
+  const huffButton = document.querySelector("#huffButton");
+  
+  const ravButton = document.querySelector("#ravButton");
+  
+  grifButton.addEventListener('click', () => {
+  const studentsAreGrif = filter(students, 'Gryffindor');
+  cardsOnDom(studentsAreGrif);
+  });
+  
+  slythButton.addEventListener('click', () => {
+  const studentsAreSlyth = filter(students, 'Slytherin');
+  cardsOnDom(studentsAreSlyth);
+  });
+  
+  huffButton.addEventListener('click', () => {
+  const studentsAreHuff = filter(students, 'Hufflepuff');
+  cardsOnDom(studentsAreHuff);
+  });
+  
+  ravButton.addEventListener('click', () => {
+  const studentsAreRav = filter(students, 'Ravenclaw');
+  cardsOnDom(studentsAreRav);
+  });
+
+  const startApp = () => {
+    cardsOnDom(students);
+    voldysArmy();
+  }
+  startApp();
