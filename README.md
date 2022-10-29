@@ -1,56 +1,54 @@
-# Sorting Hat
+# The Sorting Hat Project  [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys)
+<!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
-## Goals
-The goal of this project is to test your knowledge and to have a FUN time stretching yourself on your FIRST independent application that will become a part of your portfolio.
+For this project we were required to make a Sorting Hat from the Harry Potter Movies. This project forced me to grow immensely in my coding skills while working on it and gave me the chance to finally publish a multi-faceted set of code. The Sorting Hats greets you when the page initially loads and has a button named sort that will make a bootstrap form appear requiring the users name. This data is then randomly assigned a house name using the Math.random function and then displayed on the DOM in a bootstrap styled card. You then have the option to click the expel located on the newly created student card and you can move this student to a different array casting them out to join Voldemorts Army. As of 10-28-22 This site can only expel up to two student cards before not being able to function.
 
-Focus on MVP. Do not spend a ton of time styling initially. Hit functionality first and then spend time on the styling of the project using bootstrap.
+[View App](#your-link)
 
-- READ THROUGH ALL OF THE INFORMATION BELOW before planning how you will tackle the project.
-- Check the Issue Tickets to organize your process. You will have all week in class to work on this in class. 
-- PLEASE submit questions in help tickets if you need help. We will guide you to the resources that are available to you.
-- When done, tell an instructor. Everyone will present how far they got AND their favorite piece of code that they wrote to an instructor.
-- MOST OF ALL HAVE FUN!!!!!
+## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
+app.addEventListener('click', (e) => {
+    if (e.target.id.includes("delete")) {
+      const [, id] = e.target.id.split("--");
+  
+      
+      const index = students.findIndex(e => e.id === Number(id));
+      
+      const darkSiding = students.splice(index, 1);
+      
+      expelledStudents.push(darkSiding[0]);
+      console.log(expelledStudents);
+      voldysArmy(expelledStudents)
+     
+  
+      
+      renderToDom('#expelledContainer', voldysArmy());
+    }
+  });
 
-## Instructions
-You are in charge of bringing the Hogwarts sorting hat to life! 
+## About the User <!-- This is a scaled down user persona -->
+- The ideal user for this application is a teacher
+- They have students in their classrooms that they would like to put into random groups and they have a love and passion of Harry Potter
+- The problem this app solves for them is it allows them to get their students involved and excited about being in random groups. The students have felt that the groups have not been so random and based on favorites.
 
-This is what the finished app should have:
-- To start off with, you will use a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/#header-and-footer) to have your sorting hat introduce itself and start the sorting process (by clicking on a button). The form should not be on the DOM until the button click happens.
-
-- A [bootstrap form](https://getbootstrap.com/docs/5.0/forms/overview/) will then appear to fill in the student's name and a button to sort. This should then assign the student to a random house (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin). 
-
-- On sorting a student, the form should clear and a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/) with the student's name and a random house assignment should print below the form. 
-
-- You should also be able to expel a student after they have been sorted, which should remove their card from the student array and move them to Moldy Voldy's Army.
-
-In the end, your app will look something like: 
-
-![screencapture-drt-sorting-netlify-app-2022-04-23-14_28_47](https://user-images.githubusercontent.com/29741570/164943525-d20275be-c312-42d1-9730-0c1fd3fd9834.png)
-
-
-<!-- [See Demo](https://drt-sortinghat.netlify.app/)
- -->
-## Technical Requirements
-- You MUST plan your project and create issue tickets and a project board for your project
-- You MAY use the `renderToDom()` function that we worked on in class, but you also need to be able to explain it if you use it
-- You have to create a data structure for your project. Review all the elements that need to be on the DOM and create the structure accordingly
-- You must use [Boostrap](https://getbootstrap.com/) to style your page components
-- You must use a loop other than a `for loop`
-- Your JS file should be comprised of functions, no actions should happen in your code outside of a function except for your initial `startApp()` function
-- Your code MUST be YOUR code. Do not copy and paste code into your project. Type every bit of it out
-- Your HTML and JS should all have proper indentation
-- Helpful Form: An error message shows if a user tries to sort a student without filling out the form
-- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
-- Add filter buttons to filter the non-expelled students by house
-
-## DEFINITION OF DONE
-Once you have completed all the technical requirments, you should complete the following:
-- [README Requirements](https://github.com/orgs/nss-evening-web-development/discussions/13)
-- **RECOMMENDED** Loom Video: [Sign up for Loom](https://www.loom.com/signup) and record a video of you walking through your app 
-
-## Expel Button Hints
-Think of a way you can expel students without just hiding those divs on the page. This would mean when the button is clicked you modify the array of students and pass the new array into your `renderToDom()` function.  Double hint - put a unique id in the student object when you create them.
-
-## Optional Bonus
+## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
+- When a new student is added an object should be created and that object should be pushed into an array of students that then prints to the DOM.
 - House Colors: The color of the student's card changes depending on which house they were sorted.
-- Card Sorting/Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
+- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
+- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
+
+## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
+https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+
+## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+- [Check out the deployed site](#your-link)
+- [Wireframes](#your-link)
+- [Project Board](#your-link)
+
+## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
+PLACE CODE SNIPPET HERE
+
+## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
+<img width="1148" alt="Your Alt" src="your-link.png">
+
+## Contributors
+- [YOUR NAME](https://github.com/your-github-url)
